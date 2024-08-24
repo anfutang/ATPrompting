@@ -1,0 +1,29 @@
+Dataset: trecweb1314.
+===== NDCG@10 =====
+
+>>>>> retrieve >>>>>
+(select,few-shot):0.3550664400395361
+(select,AT-few-shot):0.3442865982352313
+(select,CoT-few-shot):0.3498431621044834
+(select,AT-CoT-few-shot):0.34076921071712757
+(respond,few-shot):0.3592364669838655
+(respond,AT-few-shot):0.34835190656540715
+(respond,CoT-few-shot):0.34818321405528296
+(respond,AT-CoT-few-shot):0.3450383638262058
+(select+respond,few-shot):0.38213640185758674
+(select+respond,AT-few-shot):0.3962618240737686
+(select+respond,CoT-few-shot):0.39276083749420093
+(select+respond,AT-CoT-few-shot):0.3974016754106719
+>>>>> rerank >>>>>
+(select,few-shot):0.403253130969708
+(select,AT-few-shot):0.40572418172682606
+(select,CoT-few-shot):0.40178320691801483
+(select,AT-CoT-few-shot):0.388768075219047
+(respond,few-shot):0.41242546219265175
+(respond,AT-few-shot):0.4054282400956917
+(respond,CoT-few-shot):0.40648642564471993
+(respond,AT-CoT-few-shot):0.4203155869761125
+(select+respond,few-shot):0.4593566272245976
+(select+respond,AT-few-shot):0.46618573400041785
+(select+respond,CoT-few-shot):0.4736402943155196
+(select+respond,AT-CoT-few-shot):0.4653251400660951

@@ -1,0 +1,15 @@
+Dataset: clariq.
+===== Bert Score (Deberta) =====
+
+===== ave ± std =====
+few-shot: 0.7348161339759827 ± 0.05338997021317482
+AT-few-shot: 0.7212918400764465 ± 0.04901157319545746
+CoT-few-shot: 0.7434343695640564 ± 0.05554550141096115
+AT-CoT-few-shot: 0.7612265348434448 ± 0.05165771394968033
+
+===== statistical test (one-side t-test 'greated') =====
+(CoT-few-shot,few-shot): 0.03565559751835931
+(CoT-few-shot,AT-few-shot): 9.024904938179102e-07
+(AT-CoT-few-shot,few-shot): 7.88836426209606e-09
+(AT-CoT-few-shot,AT-few-shot): 1.3034353432256095e-18
+(AT-CoT-few-shot,CoT-few-shot): 8.430488456949134e-05

@@ -1,0 +1,15 @@
+Dataset: qulac.
+===== Bert Score (Deberta) =====
+
+===== ave ± std =====
+few-shot: 0.7219923138618469 ± 0.046332791447639465
+AT-few-shot: 0.7090729475021362 ± 0.04255349934101105
+CoT-few-shot: 0.7313648462295532 ± 0.052303895354270935
+AT-CoT-few-shot: 0.7530953884124756 ± 0.05093078315258026
+
+===== statistical test (one-side t-test 'greated') =====
+(CoT-few-shot,few-shot): 0.03192321972532931
+(CoT-few-shot,AT-few-shot): 3.132256734361298e-06
+(AT-CoT-few-shot,few-shot): 5.170021146532185e-10
+(AT-CoT-few-shot,AT-few-shot): 1.24524093487721e-18
+(AT-CoT-few-shot,CoT-few-shot): 2.2786049082524393e-05

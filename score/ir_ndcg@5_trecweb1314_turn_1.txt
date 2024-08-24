@@ -1,0 +1,27 @@
+===== NDCG@5 =====
+>>>>> retrieve >>>>>
+(select,few-shot):0.32656957539232595
+(select,AT-few-shot):0.3221281745056738
+(select,CoT-few-shot):0.32176031590568605
+(select,AT-CoT-few-shot):0.30973626502750884
+(respond,few-shot):0.3239377878388852
+(respond,AT-few-shot):0.31555033122273385
+(respond,CoT-few-shot):0.3164803678506311
+(respond,AT-CoT-few-shot):0.30875269452542414
+(select+respond,few-shot):0.35301218387194216
+(select+respond,AT-few-shot):0.3686562020185183
+(select+respond,CoT-few-shot):0.37129427185255276
+(select+respond,AT-CoT-few-shot):0.36873130088249806
+>>>>> rerank >>>>>
+(select,few-shot):0.3579894601545374
+(select,AT-few-shot):0.3597945702230235
+(select,CoT-few-shot):0.3584910744225761
+(select,AT-CoT-few-shot):0.3383344866489132
+(respond,few-shot):0.36100090297490267
+(respond,AT-few-shot):0.3598447968996678
+(respond,CoT-few-shot):0.36662321350564353
+(respond,AT-CoT-few-shot):0.3717022975982609
+(select+respond,few-shot):0.4254763227611012
+(select+respond,AT-few-shot):0.41109713562401673
+(select+respond,CoT-few-shot):0.42686310766575275
+(select+respond,AT-CoT-few-shot):0.4224651900929662

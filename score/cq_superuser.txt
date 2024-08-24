@@ -1,0 +1,14 @@
+Dataset: superuser.
+
+===== ave ± std =====
+few-shot: 0.5825451612472534 ± 0.027355914935469627
+AT-few-shot: 0.5780429840087891 ± 0.02674148604273796
+CoT-few-shot: 0.5878679156303406 ± 0.030441729351878166
+AT-CoT-few-shot: 0.6030780076980591 ± 0.02938987873494625
+
+===== statistical test (one-side t-test 'greated') =====
+(CoT-few-shot,few-shot): 2.0529116621161542e-05
+(CoT-few-shot,AT-few-shot): 1.3968937865399607e-14
+(AT-CoT-few-shot,few-shot): 1.2602973179307236e-55
+(AT-CoT-few-shot,AT-few-shot): 6.1288696822358775e-81
+(AT-CoT-few-shot,CoT-few-shot): 2.4790512732238867e-29

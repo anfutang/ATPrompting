@@ -1,0 +1,15 @@
+__pycache__
+
+logging/
+output/
+slurm_output/
+prompt/
+scorer/indexes/
+scorer/pygaggle/
+
+**/__pycache__/
+
+development.md
+
+test.sh
+
