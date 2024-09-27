@@ -2,14 +2,13 @@ Dataset: askubuntu.
 ===== Bert Score (Deberta) =====
 
 ===== ave ± std =====
-few-shot: 0.5852197408676147 ± 0.028642429038882256
-AT-few-shot: 0.5807199478149414 ± 0.02791358344256878
-CoT-few-shot: 0.5899039506912231 ± 0.029784807935357094
-AT-CoT-few-shot: 0.6050180196762085 ± 0.03042983077466488
+few-shot: 0.565420925617218 ± 0.028406912460923195
+AT-few-shot: 0.5614088773727417 ± 0.028972389176487923
+CoT-few-shot: 0.5717414021492004 ± 0.030328789725899696
+AT-CoT-few-shot: 0.5859382748603821 ± 0.03214535117149353
 
 ===== statistical test (one-side t-test 'greated') =====
-(CoT-few-shot,few-shot): 0.00017396214396147005
-(CoT-few-shot,AT-few-shot): 7.982012427753074e-13
-(AT-CoT-few-shot,few-shot): 1.9960482979108324e-48
-(AT-CoT-few-shot,AT-few-shot): 1.2327664458586123e-71
-(AT-CoT-few-shot,CoT-few-shot): 1.1374610383044894e-28
+(CoT-few-shot,AT-few-shot): 0.00103258326598359
+(AT-CoT-few-shot,few-shot): 2.2625323974490006e-09
+(AT-CoT-few-shot,AT-few-shot): 3.0438555939836333e-12
+(AT-CoT-few-shot,CoT-few-shot): 3.212112819951581e-05

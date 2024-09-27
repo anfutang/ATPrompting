@@ -49,7 +49,7 @@ if __name__ == "__main__":
     assert args.score_type in ["cq","ir"], "ONLY two scoring types supported: 'cq' or 'ir'."
 
     if args.score_type == "cq":
-        base_dir = os.path.join(args.output_dir,args.dataset_name,"turn_1","generation","select+respond")
+        base_dir = os.path.join(args.output_dir,args.dataset_name,"turn_1","score","select+respond")
 
         scores = {}
         output = [f"Dataset: {args.dataset_name}.",f"===== Bert Score (Deberta) =====\n"]
@@ -59,7 +59,7 @@ if __name__ == "__main__":
             if not os.path.exists(dst_dir):
                 output.append(f"missing output file for prompt type {pt}.\n")
             else:
-                scores[pt] = interpret_cq_scores(pickle.load(open(os.path.join(dst_dir,"score.pkl"),"rb")))
+                scores[pt] = interpret_cq_scores(pickle.load(open(os.path.join(dst_dir,"cq_result.pkl"),"rb")))
 
         output.append("===== ave ± std =====")
         for pt, score in scores.items():

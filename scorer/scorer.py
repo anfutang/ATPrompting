@@ -17,7 +17,7 @@ class Scorer:
         assert self.score_type in ["cq","ir"], "ONLY two scoring types allowed: 'cq' or 'ir'."
 
         self.score_stage = args.score_stage
-        assert self.score_stage in ["retrieve","rerank","retrieve+rerank"], "ONLY three scoring stage allowed: 'retrieve', 'rerank', 'retrieve+rerank'."
+        assert self.score_stage in ["retrieve","rerank","retrieve+rerank","-"], "scoring stages allowed: 'retrieve', 'rerank', 'retrieve+rerank', '-' for CQ generation."
         self.k = args.k
 
         self.dataset_name = args.dataset_name
@@ -131,6 +131,8 @@ class Scorer:
 
         if "trecweb" in self.dataset_name:
             searcher = LuceneSearcher(os.path.abspath(os.path.join(os.path.dirname(__file__), 'indexes','clueweb12')))
+        if "qulac" in self.dataset_name:
+            searcher = LuceneSearcher(os.path.abspath(os.path.join(os.path.dirname(__file__), 'indexes','clueweb09')))
         if "msmarco" in self.dataset_name:
             searcher = LuceneSearcher.from_prebuilt_index('msmarco-passage')
         logger.info("BM25 researcher loaded.")

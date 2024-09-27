@@ -21,7 +21,7 @@ multi_turn_generation_template = [{"role":"system","content":"{system_instructio
 #                                                      "List of clarification questions: {clarification_questions}\n"}]
 
 response_template = [{"role":"system","content":"{system_instruction}\n{format_instruction}"},
-                     {"role":"user","content":few_shot_instruction+"{few_shot_examples}\n"+avoid_copying_instruction+"chat.\n\n"+"{chat_history}\nUser intention:{user_intention}\n"}]
+                     {"role":"user","content":few_shot_instruction+"{few_shot_examples}\n"+avoid_copying_instruction+"chat.\n\n"+"{chat_history}\nUser intention: {user_intention}\n"}]
 
 reformulation_template = [{"role":"system","content":"{system_instruction}\n\n{format_instruction}"},
                           {"role":"user","content":few_shot_instruction+"{few_shot_examples}\n"+avoid_copying_instruction+"chat.\n\n"+"{chat_history}\n"}]

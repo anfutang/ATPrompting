@@ -1,7 +1,8 @@
 #!/bin/bash
 
 PARTITION="funky"
-NODELIST=("edwards" "rodgers" "bernard" "pascal")
+# NODELIST=("edwards" "rodgers" "bernard" "pascal")
+NODELIST=("bernard")
 NUM_NODES=${#NODELIST[@]}
 
 DATASET_NAME=$1

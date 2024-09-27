@@ -1,0 +1,29 @@
+Dataset: msmarco_dev_small.
+===== MRR@10 =====
+
+>>>>> retrieve >>>>>
+(select,few-shot):0.12270520848502499
+(select,AT-few-shot):0.09781564001747488
+(select,CoT-few-shot):0.11448716081743605
+(select,AT-CoT-few-shot):0.11503325081306733
+(respond,few-shot):0.21025557011795545
+(respond,AT-few-shot):0.16612179020435902
+(respond,CoT-few-shot):0.18223144507548178
+(respond,AT-CoT-few-shot):0.2202781418377749
+(select+respond,few-shot):0.19653536236105046
+(select+respond,AT-few-shot):0.22906290956749673
+(select+respond,CoT-few-shot):0.22123440609679143
+(select+respond,AT-CoT-few-shot):0.20481287316149702
+>>>>> rerank >>>>>
+(select,few-shot):0.23281151400417455
+(select,AT-few-shot):0.20319523324110483
+(select,CoT-few-shot):0.2005278869957769
+(select,AT-CoT-few-shot):0.188390126692879
+(respond,few-shot):0.34544925003640603
+(respond,AT-few-shot):0.2917018591330518
+(respond,CoT-few-shot):0.3096560846560847
+(respond,AT-CoT-few-shot):0.3466603562933838
+(select+respond,few-shot):0.3022523178486481
+(select+respond,AT-few-shot):0.3193995437114703
+(select+respond,CoT-few-shot):0.33339279646619097
+(select+respond,AT-CoT-few-shot):0.3302145526916169

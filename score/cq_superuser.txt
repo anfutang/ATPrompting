@@ -1,14 +1,14 @@
 Dataset: superuser.
+===== Bert Score (Deberta) =====
 
 ===== ave ± std =====
-few-shot: 0.5825451612472534 ± 0.027355914935469627
-AT-few-shot: 0.5780429840087891 ± 0.02674148604273796
-CoT-few-shot: 0.5878679156303406 ± 0.030441729351878166
-AT-CoT-few-shot: 0.6030780076980591 ± 0.02938987873494625
+few-shot: 0.5659615397453308 ± 0.02903856709599495
+AT-few-shot: 0.5626220703125 ± 0.02875472605228424
+CoT-few-shot: 0.5713567137718201 ± 0.03130872920155525
+AT-CoT-few-shot: 0.5861075520515442 ± 0.03282991424202919
 
 ===== statistical test (one-side t-test 'greated') =====
-(CoT-few-shot,few-shot): 2.0529116621161542e-05
-(CoT-few-shot,AT-few-shot): 1.3968937865399607e-14
-(AT-CoT-few-shot,few-shot): 1.2602973179307236e-55
-(AT-CoT-few-shot,AT-few-shot): 6.1288696822358775e-81
-(AT-CoT-few-shot,CoT-few-shot): 2.4790512732238867e-29
+(CoT-few-shot,AT-few-shot): 0.0006325170614163608
+(AT-CoT-few-shot,few-shot): 7.846810906062085e-13
+(AT-CoT-few-shot,AT-few-shot): 1.1802097885432623e-16
+(AT-CoT-few-shot,CoT-few-shot): 2.070181945250981e-07

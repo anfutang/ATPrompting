@@ -14,12 +14,12 @@ def clean_sentence(s):
 
 def collect_chat_history(args,qs,ls,usm,pt):
     if args.turn_id > 1:
-        prev_turn_chs = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"turn_{args.turn_id-1}","summary.json")))[usm][pt]["chat_history"]
-        response_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"turn_{args.turn_id}","response",usm,pt,"output.json")))["output"]
+        prev_turn_chs = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id-1}","summary.json")))[usm][pt]["chat_history"]
+        response_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id}","response",usm,pt,"output.json")))["output"]
         assert len(prev_turn_chs) == len(response_result), f"{usm}/{pt}: length of response result should be the number of previous turn chat histories."
         if usm != "select":
-            generation_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"turn_{args.turn_id}","generation",usm,pt,"output.json")))["output"]
-            reformulation_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"turn_{args.turn_id}","reformulation",usm,pt,"output.json")))["output"]
+            generation_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id}","generation",usm,pt,"output.json")))["output"]
+            reformulation_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id}","reformulation",usm,pt,"output.json")))["output"]
             assert len(prev_turn_chs) == len(reformulation_result), f"{usm}/{pt}: length of reformulation result should be the number of previous turn chat histories."
         
         if usm == "select":
@@ -36,11 +36,11 @@ def collect_chat_history(args,qs,ls,usm,pt):
             rs = [doc["processed"]["response"] for doc in response_result]
             chat_history = ['\n'.join([ch,f"Selected clarification question: {cq}",f"Response: {r}"]) for ch, cq, r in zip(prev_turn_chs,cqs,rs)]
     else:
-        response_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"turn_{args.turn_id}","response",usm,pt,"output.json")))["output"]
+        response_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id}","response",usm,pt,"output.json")))["output"]
         assert len(qs) == len(response_result), f"{usm}/{pt}: length of response result should be the number of user intentions."
         if usm != "select":
-            generation_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"turn_{args.turn_id}","generation",usm,pt,"output.json")))["output"]
-            reformulation_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"turn_{args.turn_id}","reformulation",usm,pt,"output.json")))["output"]
+            generation_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id}","generation",usm,pt,"output.json")))["output"]
+            reformulation_result = json.load(open(os.path.join(args.output_dir,args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id}","reformulation",usm,pt,"output.json")))["output"]
             assert len(ls) == len(generation_result), f"{usm}/{pt}: length of generation result should be the number of initial queries."
             assert len(qs) == len(reformulation_result), f"{usm}/{pt}: length of reformulation result should be the number of user intentions."
 
@@ -78,11 +78,11 @@ if __name__ == "__main__":
         for pt in pts:
             summary[usm][pt] = collect_chat_history(args,qs,ls,usm,pt)
     
-    dst_fn = os.path.join(args.output_dir,args.dataset_name,f"turn_{args.turn_id}","summary.json")
+    dst_fn = os.path.join(args.output_dir,args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id}","summary.json")
     with open(dst_fn,'w') as f:
         json.dump(summary,f)
     
-    print(f"success: summary file of {args.dataset_name.upper()}-TURN_{args.turn_id} saved to {dst_fn}.")
+    print(f"success: summary file of {args.dataset_name.upper()}-NOISE_TYPE_{args.noise_type}-TURN_{args.turn_id} saved to {dst_fn}.")
     
 
 

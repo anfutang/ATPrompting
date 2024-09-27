@@ -19,6 +19,7 @@ class PromptLoader:
         self.prompt_dir = args.prompt_dir
         self.dataset_name = args.dataset_name
         self.stage = args.stage
+        self.noise_type = args.noise_type
         self.prompt_type = args.prompt_type
         self.user_simulation_mode = args.user_simulation_mode
         self.turn_id = args.turn_id
@@ -147,10 +148,10 @@ class PromptLoader:
 
         if self.view_prompt:
             if self.stage == "preprocessing":
-                prompt_dir = os.path.join(self.prompt_dir,self.dataset_name,f"turn_{self.turn_id}",self.stage)
+                prompt_dir = os.path.join(self.prompt_dir,self.dataset_name,f"noise_type_{self.noise_type}",f"turn_{self.turn_id}",self.stage)
             else:
-                prompt_dir = os.path.join(self.prompt_dir,self.dataset_name,f"turn_{self.turn_id}",self.stage,self.user_simulation_mode,self.prompt_type)
+                prompt_dir = os.path.join(self.prompt_dir,self.dataset_name,f"noise_type_{self.noise_type}",f"turn_{self.turn_id}",self.stage,self.user_simulation_mode,self.prompt_type)
             with open(os.path.join(prompt_dir,f"prompts.txt"),'w') as f:
-                f.write(split_str.join(prompts[-10:]))
+                f.write(split_str.join(prompts))
             logger.info(f"VIEW PROMPT mode: prompt texts are printed out and saved under {prompt_dir}.")
         return prompts

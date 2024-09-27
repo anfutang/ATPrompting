@@ -3,8 +3,11 @@ import datetime
 import numpy as np
 import random
 import torch
+import transformers
 
 valid_prompt_types = ["zero-shot","few-shot","AT-zero-shot","AT-few-shot","CoT-zero-shot","CoT-few-shot","AT-CoT-zero-shot","AT-CoT-few-shot"]
+
+noisetype2rate = {1:0.333,2:0.667,3:1.0}
 
 def validate_arguments(args):
     assert os.path.exists(args.data_dir), "input data does not exist."
@@ -14,6 +17,7 @@ def validate_arguments(args):
         os.makedirs(args.logging_dir,exist_ok=True)
     if not os.path.exists(args.prompt_dir):
         os.makedirs(args.prompt_dir,exist_ok=True)
+    assert 1 <= args.noise_type <= 4, "ONLY 4 rates allowed: 1-1/3; 2-2/3; 3-1/1; 4-incremental." 
     assert args.turn_id >= 1, "turn id must be superior or equal to 1."
     assert args.stage in ["preprocessing","generation","response","reformulation"], "INVALID stage."
     assert args.user_simulation_mode in ["select","respond","select+respond",""], "INVALID user simulation mode."
@@ -25,9 +29,9 @@ def validate_arguments(args):
 
 def build_dst_folder(args):
     if args.stage == "preprocessing":
-        comb = [args.dataset_name,f"turn_{args.turn_id}",args.stage]
+        comb = [args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id}",args.stage]
     else:
-        comb = [args.dataset_name,f"turn_{args.turn_id}",args.stage,args.user_simulation_mode,args.prompt_type]
+        comb = [args.dataset_name,f"noise_type_{args.noise_type}",f"turn_{args.turn_id}",args.stage,args.user_simulation_mode,args.prompt_type]
 
     if args.view_prompt:
         curr_logging_dir, curr_output_dir = args.prompt_dir, args.prompt_dir
@@ -54,6 +58,14 @@ def show_job_infos(args):
     infos.append(f"*Stage: {args.stage}")
     infos.append(f"*Maximum retry tims: {args.maximum_retry_times}")
     if args.stage != "preprocessing":
+        if args.noise_type != 4:
+            noise_type = 'constant'
+            noise_rate = noisetype2rate[args.noise_type]
+        else:
+            noise_type = 'incremental'
+            noise_rate = noisetype2rate[args.turn_id]
+        infos.append(f"*Noise Type (user intention): {noise_type}")
+        infos.append(f"*Noise Rate (user intention): {noise_rate}")
         infos.append(f"*User simulation mode: {args.user_simulation_mode}")
         infos.append(f"*Prompt type: {args.prompt_type}")
     infos.append('='*10+'\n')
@@ -64,3 +76,4 @@ def set_seed(seed):
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
+    transformers.set_seed(seed)

@@ -1,14 +1,13 @@
 Dataset: unix_stackexchange.
+===== Bert Score (Deberta) =====
 
 ===== ave ± std =====
-few-shot: 0.5762436985969543 ± 0.02863645739853382
-AT-few-shot: 0.5717576742172241 ± 0.028085783123970032
-CoT-few-shot: 0.5806847810745239 ± 0.03023291751742363
-AT-CoT-few-shot: 0.5941945910453796 ± 0.028956349939107895
+few-shot: 0.5590686798095703 ± 0.03312032297253609
+AT-few-shot: 0.5576674342155457 ± 0.0305507630109787
+CoT-few-shot: 0.5634283423423767 ± 0.03564775362610817
+AT-CoT-few-shot: 0.5797992944717407 ± 0.037043455988168716
 
 ===== statistical test (one-side t-test 'greated') =====
-(CoT-few-shot,few-shot): 0.0003818362189057796
-(CoT-few-shot,AT-few-shot): 5.330121984147578e-12
-(AT-CoT-few-shot,few-shot): 1.781775790866873e-42
-(AT-CoT-few-shot,AT-few-shot): 9.695323589954227e-65
-(AT-CoT-few-shot,CoT-few-shot): 3.762455381589994e-24
+(AT-CoT-few-shot,few-shot): 5.939731388989675e-05
+(AT-CoT-few-shot,AT-few-shot): 1.1520788417265832e-05
+(AT-CoT-few-shot,CoT-few-shot): 0.0015235898855411483

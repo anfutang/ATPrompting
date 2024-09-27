@@ -1,6 +1,6 @@
 ambiguity_type_definitions = """The ambiguity of a query can be multifaceted, and there are multiple possible ambiguity types: 
 [1] Semantic: the query is semantically ambiguous for several common reasons: it may include homonyms; a word in the query may refer to a specific entity while also functioning as a common word; or an entity mention in the query could refer to multiple distinct entities. 
-[2] Generalization: the query focuses on specific information; however, a broader, closely related query might better capture the user's true information needs.
+[2] Generalize: the query focuses on specific information; however, a broader, closely related query might better capture the user's true information needs.
 [3] Specify: the query has a clear focus but may encompass too broad a research scope. It is possible to further narrow down this scope by providing more specific information related to the query.\n"""
 
 class SystemInstruction:
